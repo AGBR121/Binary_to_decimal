@@ -4,7 +4,7 @@ export default function BinarioDecimal(){
     return(
         <div>
             <Navbar/>
-            <h4>Pasar de sistema decimal a binario</h4>
+            <h4>Pasar de sistema binario a decimal</h4>
             <div className='Form'>
                 <form>
                     <label>

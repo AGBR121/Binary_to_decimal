@@ -1,0 +1,58 @@
+header {
+    box-sizing: border-box;
+    background-color: rgb(75, 75, 75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.buttonNavbar {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 3rem;
+    color: #1db4ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+h3:hover {
+    color: #0097e2;
+}
+
+.buttonNavbar button {
+    width: auto;
+    background: linear-gradient(to right, rgb(86, 217, 235), #1badf7ce);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonNavbar button:hover {
+    background: linear-gradient(to right, rgb(22, 186, 211), #017dbbce);
+}
+
+.disabled-link {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background: linear-gradient(to right, rgb(86, 217, 235), #1badf7ce);
+}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-export default function decimalBinario(){
+import Navbar from './navbar.jsx';
+export default function DecimalBinario(){
     return(
         <div>
-
+            <Navbar/>
         </div>
     )
 }

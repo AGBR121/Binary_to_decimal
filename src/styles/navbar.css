@@ -10,6 +10,7 @@ header {
     margin-top: 15px;
     border-radius: 20px;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 header a {
@@ -21,6 +22,7 @@ header a {
     width: 60%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 h3 {
@@ -41,6 +43,7 @@ h3:hover {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .buttonNavbar button:hover {
@@ -55,4 +58,27 @@ h3:hover {
 button:disabled {
     cursor: not-allowed;
     background: linear-gradient(to right, rgb(86, 217, 235), #1badf7ce);
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .buttonNavbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .buttonNavbar button {
+        padding: 10px 15px;
+    }
 }

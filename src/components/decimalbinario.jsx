@@ -14,7 +14,7 @@ export default function DecimalBinario(){
         if (!isNaN(decimal) && decimal !== '') {
             setBinary(decimalToBinary(Number(decimal)));
         } else {
-            setBinary('Entrada inválida');
+            setBinary('NAN');
         }
     };
 

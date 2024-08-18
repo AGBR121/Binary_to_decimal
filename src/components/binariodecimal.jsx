@@ -30,7 +30,7 @@ export default function BinarioDecimal() {
                         <label>
                             Binario
                             <input 
-                                type='text' 
+                                type='number' 
                                 value={binary} 
                                 onChange={handleBinaryChange} 
                                 placeholder="Ingrese un número binario" 

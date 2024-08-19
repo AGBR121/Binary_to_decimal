@@ -12,10 +12,26 @@ export default function BinarioDecimal() {
 
     const handleConvert = (e) => {
         e.preventDefault();
-        if (/^[01]+$/.test(binary)) { 
-            setDecimal(parseInt(binary, 2));
+        if (/^[01]+(\.[01]+)?$/.test(binary)) { 
+            setDecimal(binaryToDecimal(binary));
         } else {
             setDecimal('NAN');
+        }
+    };
+
+    const binaryToDecimal = (binary) => {
+        let [integerPart, fractionalPart] = binary.split('.');
+
+        let decimalInteger = parseInt(integerPart, 2);
+
+        if (fractionalPart) {
+            let decimalFraction = 0;
+            for (let i = 0; i < fractionalPart.length; i++) {
+                decimalFraction += parseInt(fractionalPart[i], 10) * Math.pow(2, -(i + 1));
+            }
+            return decimalInteger + decimalFraction;
+        } else {
+            return decimalInteger;
         }
     };
 
@@ -30,7 +46,7 @@ export default function BinarioDecimal() {
                         <label>
                             Binario
                             <input 
-                                type='number' 
+                                type='text' 
                                 value={binary} 
                                 onChange={handleBinaryChange} 
                                 placeholder="Ingrese un número binario" 

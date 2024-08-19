@@ -12,14 +12,35 @@ export default function DecimalBinario(){
 
     const handleConvert = () => {
         if (!isNaN(decimal) && decimal !== '') {
-            setBinary(decimalToBinary(Number(decimal)));
+            setBinary(decimalToBinary(parseFloat(decimal)));
         } else {
             setBinary('NAN');
         }
     };
 
-    const decimalToBinary = (decimal) => {
-        return (decimal >>> 0).toString(2);
+    const decimalToBinary = (num) => {
+        let [integerPart, fractionalPart] = num.toString().split('.');
+
+        let binaryInteger = parseInt(integerPart, 10).toString(2);
+
+        if (fractionalPart) {
+            let binaryFraction = '.';
+            let fraction = parseFloat('0.' + fractionalPart);
+            let limit = 10; 
+
+            while (fraction > 0 && limit--) {
+                fraction *= 2;
+                if (fraction >= 1) {
+                    binaryFraction += '1';
+                    fraction -= 1;
+                } else {
+                    binaryFraction += '0';
+                }
+            }
+            return binaryInteger + binaryFraction;
+        } else {
+            return binaryInteger;
+        }
     };
 
     return(
@@ -32,7 +53,7 @@ export default function DecimalBinario(){
                     <label>
                         Decimal
                         <input 
-                            type='number' 
+                            type='text' 
                             value={decimal}  
                             onChange={handleDecimalChange} 
                             placeholder="Ingrese un número decimal" 

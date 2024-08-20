@@ -53,7 +53,7 @@ export default function DecimalBinario(){
                     <label>
                         Decimal
                         <input 
-                            type='text' 
+                            type='number' 
                             value={decimal}  
                             onChange={handleDecimalChange} 
                             placeholder="Ingrese un número decimal" 
